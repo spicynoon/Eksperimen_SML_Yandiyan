@@ -4,8 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import joblib
 
-RAW_PATH = "/data/raw/Dry_Bean_Dataset.xlsx"
-OUT_DIR = "/data/processed/"
+RAW_PATH = "data/raw/Dry_Bean_Dataset.xlsx"
+OUT_DIR = "data/processed/"
 
 def load_raw(path):
     print(">>> Load raw data")

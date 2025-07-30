@@ -26,6 +26,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas scikit-learn openpyxl joblib
 
+      - name: List data/raw contents (debug)
+        run: |
+          ls -lh data/raw/ || echo "Folder data/raw/ tidak ada"
+          ls -lh data/ || echo "Folder data/ tidak ada"
+          ls -lh . || echo "Root folder tidak ada"
+
       - name: Run preprocessing automation
         run: python preprocessing/automate_Yandiyan.py
 

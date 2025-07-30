@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Eksperiman_SML_Yandiyan/Workflow-CI/mlruns/0/a84f39c52a59463cb316c074e8dfda16/artifacts
+end_time: 1753861005407
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a84f39c52a59463cb316c074e8dfda16
+run_name: serious-donkey-195
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753860965800
+status: 3
+tags: []
+user_id: yandi

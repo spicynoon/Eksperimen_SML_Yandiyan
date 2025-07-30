@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Eksperiman_SML_Yandiyan/Workflow-CI/mlruns/0/b54cc25a5c8645ba9430e3e5e2be75bf/artifacts
+end_time: 1753860850655
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b54cc25a5c8645ba9430e3e5e2be75bf
+run_name: defiant-gnu-530
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753860815106
+status: 4
+tags: []
+user_id: yandi

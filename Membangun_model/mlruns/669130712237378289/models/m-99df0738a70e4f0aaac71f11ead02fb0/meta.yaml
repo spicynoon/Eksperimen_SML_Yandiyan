@@ -1,0 +1,10 @@
+artifact_location: file:///D:/Eksperiman_SML_Yandiyan/Membangun_model/mlruns/669130712237378289/models/m-99df0738a70e4f0aaac71f11ead02fb0/artifacts
+creation_timestamp: 1753853667980
+experiment_id: '669130712237378289'
+last_updated_timestamp: 1753853675063
+model_id: m-99df0738a70e4f0aaac71f11ead02fb0
+model_type: null
+name: model
+source_run_id: f9834f0b9ba349f594d97f8a8755549a
+status: 2
+status_message: null

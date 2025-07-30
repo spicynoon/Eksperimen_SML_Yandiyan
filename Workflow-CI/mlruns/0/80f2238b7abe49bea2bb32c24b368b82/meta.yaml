@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Eksperiman_SML_Yandiyan/Workflow-CI/mlruns/0/80f2238b7abe49bea2bb32c24b368b82/artifacts
+end_time: 1753860572270
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 80f2238b7abe49bea2bb32c24b368b82
+run_name: indecisive-squid-428
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753860357153
+status: 4
+tags: []
+user_id: yandi

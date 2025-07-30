@@ -1,0 +1,15 @@
+name: drybean-env
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pip
+  - pip:
+      - mlflow
+      - dagshub
+      - joblib
+      - numpy

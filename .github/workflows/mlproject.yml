@@ -1,0 +1,44 @@
+name: Train Drybean Model CI (MLflow Project)
+
+on:
+  push:
+    paths:
+      - "Workflow-CI/**"
+      - ".github/workflows/mlproject.yml"
+  workflow_dispatch:
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Conda
+        uses: conda-incubator/setup-miniconda@v3
+
+      - name: Install dependencies & MLflow
+        run: |
+          conda env create -f Workflow-CI/conda.yaml
+          source ~/.bashrc
+          conda activate drybean-env
+          pip install mlflow dagshub
+
+      - name: Run MLflow Project
+        run: |
+          conda activate drybean-env
+          mlflow run Workflow-CI -P n_estimators=200 -P max_depth=20 -P min_samples_split=2
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: model_artifacts
+          path: |
+            Workflow-CI/best_model.pkl
+            Workflow-CI/confusion_matrix.png
+            Workflow-CI/classification_report.txt

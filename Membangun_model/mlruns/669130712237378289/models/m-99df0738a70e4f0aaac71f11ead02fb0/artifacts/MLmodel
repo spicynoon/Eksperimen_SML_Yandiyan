@@ -1,0 +1,39 @@
+artifact_path: file:///D:/Eksperiman_SML_Yandiyan/Membangun_model/mlruns/669130712237378289/models/m-99df0738a70e4f0aaac71f11ead02fb0/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+is_signature_from_type_hint: false
+mlflow_version: 3.1.4
+model_id: m-99df0738a70e4f0aaac71f11ead02fb0
+model_size_bytes: 30564009
+model_uuid: m-99df0738a70e4f0aaac71f11ead02fb0
+prompts: null
+run_id: f9834f0b9ba349f594d97f8a8755549a
+signature:
+  inputs: '[{"type": "double", "name": "Area", "required": true}, {"type": "double",
+    "name": "Perimeter", "required": true}, {"type": "double", "name": "MajorAxisLength",
+    "required": true}, {"type": "double", "name": "MinorAxisLength", "required": true},
+    {"type": "double", "name": "AspectRation", "required": true}, {"type": "double",
+    "name": "Eccentricity", "required": true}, {"type": "double", "name": "ConvexArea",
+    "required": true}, {"type": "double", "name": "EquivDiameter", "required": true},
+    {"type": "double", "name": "Extent", "required": true}, {"type": "double", "name":
+    "Solidity", "required": true}, {"type": "double", "name": "roundness", "required":
+    true}, {"type": "double", "name": "Compactness", "required": true}, {"type": "double",
+    "name": "ShapeFactor1", "required": true}, {"type": "double", "name": "ShapeFactor2",
+    "required": true}, {"type": "double", "name": "ShapeFactor3", "required": true},
+    {"type": "double", "name": "ShapeFactor4", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-07-30 05:34:28.070444'

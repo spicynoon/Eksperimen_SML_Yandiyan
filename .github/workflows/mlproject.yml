@@ -25,6 +25,7 @@ jobs:
       - name: Install dependencies & MLflow
         run: |
           conda env create -f Workflow-CI/conda.yaml
+          . ~/miniconda3/etc/profile.d/conda.sh
           conda activate drybean-env
           pip install mlflow dagshub
 

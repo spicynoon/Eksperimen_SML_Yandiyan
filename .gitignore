@@ -1,9 +1,5 @@
 # .gitignore
 
-# Data
-data/raw/
-data/processed/
-
 # Python cache & venv
 __pycache__/
 *.pyc

@@ -1,0 +1,20 @@
+# .gitignore
+
+# Data
+data/raw/
+data/processed/
+
+# Python cache & venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db

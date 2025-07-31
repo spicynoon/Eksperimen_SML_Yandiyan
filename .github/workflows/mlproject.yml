@@ -25,12 +25,13 @@ jobs:
       - name: Install dependencies & MLflow
         run: |
           conda env create -f Workflow-CI/conda.yaml
-          . ~/miniconda3/etc/profile.d/conda.sh
+          . $CONDA/etc/profile.d/conda.sh
           conda activate drybean-env
           pip install mlflow dagshub
 
       - name: Run MLflow Project
         run: |
+          . $CONDA/etc/profile.d/conda.sh
           conda activate drybean-env
           mlflow run Workflow-CI -P n_estimators=200 -P max_depth=20 -P min_samples_split=2
 

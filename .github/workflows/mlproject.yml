@@ -25,13 +25,12 @@ jobs:
       - name: Install dependencies & MLflow
         run: |
           conda env create -f Workflow-CI/conda.yaml
-          . $CONDA/etc/profile.d/conda.sh
+          . ~/miniconda3/etc/profile.d/conda.sh
           conda activate drybean-env
           pip install mlflow dagshub
 
       - name: Run MLflow Project
         run: |
-          . $CONDA/etc/profile.d/conda.sh
           conda activate drybean-env
           mlflow run Workflow-CI -P n_estimators=200 -P max_depth=20 -P min_samples_split=2
 
@@ -43,3 +42,18 @@ jobs:
             Workflow-CI/best_model.pkl
             Workflow-CI/confusion_matrix.png
             Workflow-CI/classification_report.txt
+
+      # ====== Docker Integration ======
+      - name: Build Docker Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/drybean-model:latest Workflow-CI
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker Image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/drybean-model:latest

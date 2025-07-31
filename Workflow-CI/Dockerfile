@@ -1,17 +1,11 @@
-FROM continuumio/miniconda3
-
-# Copy environment ke image & install
-COPY Workflow-CI/conda.yaml /tmp/conda.yaml
-RUN conda env create -f /tmp/conda.yaml \
-    && conda clean -afy
-
-# Copy script dan data preprocessing
-COPY Workflow-CI/modelling.py /app/modelling.py
-COPY Workflow-CI/drybean_preprocessing /app/drybean_preprocessing
+FROM python:3.12-slim
 
 WORKDIR /app
 
-# Aktifkan env saat start container
-SHELL ["conda", "run", "-n", "drybean-env", "/bin/bash", "-c"]
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY best_model.pkl .
+COPY modelling.py .
 
 CMD ["python", "modelling.py"]
